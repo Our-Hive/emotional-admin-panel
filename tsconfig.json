@@ -3,6 +3,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@atoms/*": ["./src/app/atoms/*"],
+      "@molecules/*": ["./src/app/molecules/*"],
+      "@organisms/*": ["./src/app/organisms/*"],
+      "@templates/*": ["./src/app/templates/*"],
+      "@pages/*": ["./src/app/pages/*"]
+    },
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -19,10 +26,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
