@@ -1,0 +1,11 @@
+@import "../../../../styles/colors";
+@import "../../../../styles/typography";
+
+.button-primary {
+  background-color: $primary;
+  color: $onPrimary;
+  font-size: $font-size-medium-large;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
