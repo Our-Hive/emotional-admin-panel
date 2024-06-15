@@ -1,0 +1,25 @@
+<!-- todo: add [formGroup]="loginForm" (ngSubmit)="onSubmit()" -->
+<form class="login-form">
+  <h2 class="login-title">Iniciar Sesión</h2>
+  <div>
+    <app-form-field
+      inputPlaceholder="Ingrese su correo"
+      inputType="email"
+      for="email"
+      name="email"
+      label="Correo:"
+      class="login-form-field"
+    />
+  </div>
+  <div>
+    <app-form-field
+      inputPlaceholder="Ingrese su contraseña"
+      inputType="password"
+      for="password"
+      name="password"
+      label="Contraseña:"
+      class="login-form-field"
+    />
+  </div>
+  <app-button-primary text="Iniciar Sesión" />
+</form>

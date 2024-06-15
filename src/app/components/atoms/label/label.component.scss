@@ -1,0 +1,8 @@
+@import "../../../../styles/colors";
+
+.label {
+  font-size: $font-size-medium;
+  color: $white;
+  overflow: hidden;
+  transition: color 0.3s ease-in-out;
+}

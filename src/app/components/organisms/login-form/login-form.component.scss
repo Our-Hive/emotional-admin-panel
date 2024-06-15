@@ -1,0 +1,22 @@
+@import "src/styles/_colors.scss";
+@import "src/styles/_typography.scss";
+.login-form {
+  display: grid;
+  gap: 2rem;
+  place-items: center;
+  padding: 5rem;
+  background-color: $surface;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba($black, 0.2);
+
+  .login-title {
+    font-size: $font-size-large;
+    font-weight: 700;
+    color: $white;
+    text-align: center;
+  }
+  .login-form-field {
+    color: $white;
+    font-size: $font-size-medium-large;
+  }
+}
