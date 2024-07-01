@@ -1,5 +1,4 @@
-<!-- todo: add [formGroup]="loginForm" (ngSubmit)="onSubmit()" -->
-<form class="login-form">
+<form class="login-form" [formGroup]="loginForm" (submit)="(onSubmit)">
   <h2 class="login-title">Iniciar Sesión</h2>
   <div>
     <app-form-field
@@ -8,6 +7,7 @@
       for="email"
       name="email"
       label="Correo:"
+      [control]="emailControl"
       class="login-form-field"
     />
   </div>
@@ -18,8 +18,14 @@
       for="password"
       name="password"
       label="Contraseña:"
+      [control]="passwordControl"
       class="login-form-field"
     />
   </div>
+  <button type="submit">Click correct</button>
   <app-button-primary text="Iniciar Sesión" />
 </form>
+<code style="color: white">
+  {{ loginForm.value.email }}
+  {{ loginForm.value.password }}
+</code>

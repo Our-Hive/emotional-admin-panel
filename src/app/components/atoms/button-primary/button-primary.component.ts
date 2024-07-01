@@ -9,4 +9,5 @@ import { Component, input } from '@angular/core';
 })
 export class ButtonPrimaryComponent {
   text = input.required<string>();
+  onClick = input<() => void>();
 }
