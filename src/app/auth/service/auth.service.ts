@@ -12,8 +12,9 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(loginCredentials: PostAuthRequestDto) {
-    return this.http.post<PostAuthResponseDto>(`${this.apiUrl}/login`, {
-      loginCredentials,
-    });
+    return this.http.post<PostAuthResponseDto>(
+      `${this.apiUrl}/login`,
+      loginCredentials
+    );
   }
 }

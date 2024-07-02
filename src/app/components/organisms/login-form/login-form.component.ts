@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -42,10 +42,6 @@ export class LoginFormComponent {
   }
 
   onSubmit() {
-    console.log('correct');
-    console.log(this.loginForm.get('email')?.value);
-    console.log(this.loginForm.get('password')?.value);
-
     if (this.loginForm.invalid) {
       return;
     }
