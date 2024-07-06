@@ -11,6 +11,7 @@ import { ButtonPrimaryComponent } from '@atoms/button-primary/button-primary.com
 import { FormFieldComponent } from '@molecules/form-field/form-field.component';
 import { AuthService } from 'src/app/auth/service/auth.service';
 import { PostAuthRequestDto } from '../../../auth/dtos/request/post.auth.request.dto';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-form',
@@ -27,7 +28,7 @@ import { PostAuthRequestDto } from '../../../auth/dtos/request/post.auth.request
 export class LoginFormComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.loginForm = this.fb.nonNullable.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -52,8 +53,9 @@ export class LoginFormComponent {
     this.authService
       .login({ email, password } as PostAuthRequestDto)
       .subscribe({
-        next: (response) => {
-          console.log(response);
+        next: async (response) => {
+          alert('Login successful');
+          await this.router.navigate(['/home']);
         },
         error: (error) => {
           console.log(error);
