@@ -1,1 +1,10 @@
-<p>header works!</p>
+<header class="header-container">
+  <img class="icon" src="/images/branding/app_icon.jpg" alt="logo" >
+  <ul class="header-list">
+    @for (item of headerItems; track item.name) {
+      <li class="header-list-item" routerLink="{{ item.route }}" routerLinkActive="active">
+        <a class="header-list-item-link">{{ item.name }}</a>
+      </li>
+    }
+  </ul>
+</header>

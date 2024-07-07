@@ -1,0 +1,40 @@
+@import "src/styles/_colors.scss";
+@import "src/styles/_typography.scss";
+
+.header-container {
+  background-color: $surface;
+  height: 8rem;
+  width: 100%;
+  display: flex;
+
+  .icon {
+    height: 60%;
+    border-radius: 50%;
+    margin-left: 4rem;
+    align-self: center;
+  }
+
+  .header-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+    margin-right: 8rem;
+
+    .header-list-item {
+      cursor: pointer;
+      list-style: none;
+      .header-list-item-link {
+        color: $white;
+        text-decoration: none;
+        font-size: $font-size-large;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.active {
+  border-bottom: 0.2rem solid $primary;
+}
