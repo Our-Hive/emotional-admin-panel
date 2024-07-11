@@ -55,7 +55,7 @@ export class LoginFormComponent {
       .subscribe({
         next: async (response) => {
           alert('Login successful');
-          await this.router.navigate(['/home']);
+          await this.router.navigate(['/emotions']);
         },
         error: (error) => {
           console.log(error);

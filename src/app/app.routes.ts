@@ -1,19 +1,26 @@
 import {Routes} from '@angular/router';
-import {LoginComponent} from '@pages/login/login.component';
-import {HomeComponent} from "@pages/home/home.component";
+import {LoginPageComponent} from './components/pages/login-page/login-page.component';
+import {EmotionsPageComponent} from "./components/pages/emotion-page/emotions-page.component";
+import {DashboardComponent} from "@templates/dashboard/dashboard.component";
+import {InformationPageComponent} from "./components/pages/information-page/information-page.component";
 
 export const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
+    component: LoginPageComponent,
   },
   {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'emotions',
+        component: EmotionsPageComponent,
+      },
+      {
+        path: 'information',
+        component: InformationPageComponent,
+      }
+    ],
   },
 ];
