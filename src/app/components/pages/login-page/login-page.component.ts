@@ -3,10 +3,10 @@ import { LoginFormComponent } from '@organisms/login-form/login-form.component';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-login-page',
   standalone: true,
   imports: [ImageOurHiveComponent, LoginFormComponent],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+  templateUrl: './login-page.component.html',
+  styleUrl: './login-page.component.scss',
 })
-export class LoginComponent {}
+export class LoginPageComponent {}
