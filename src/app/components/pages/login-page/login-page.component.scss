@@ -9,3 +9,9 @@
   gap: 10rem;
   background: url("/svg/background.svg");
 }
+@media screen and (max-width: 768px) {
+  .login-page-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
