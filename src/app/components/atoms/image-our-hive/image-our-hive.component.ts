@@ -1,12 +1,11 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-image-our-hive',
   standalone: true,
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './image-our-hive.component.html',
-  styleUrl: './image-our-hive.component.scss'
+  styleUrl: './image-our-hive.component.scss',
 })
-export class ImageOurHiveComponent {
-
-}
+export class ImageOurHiveComponent {}
