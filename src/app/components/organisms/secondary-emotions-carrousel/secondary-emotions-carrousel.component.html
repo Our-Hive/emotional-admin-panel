@@ -1,0 +1,10 @@
+<section class="secondary-emotions-carrousel">
+  @for (emotion of emotions; track $index) {
+  <app-card-emotion
+    [emotion]="emotion.name"
+    [description]="emotion.description"
+    [color]="emotion.color"
+  />
+  }
+  <app-button-add [backgroundColor]="emotions[0].color" />
+</section>

@@ -1,0 +1,8 @@
+@import "src/styles/_colors.scss";
+
+.button-add {
+  border-radius: 50%;
+  padding: 1rem;
+  background-color: $primary;
+  cursor: pointer;
+}

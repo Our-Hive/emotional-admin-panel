@@ -1,0 +1,18 @@
+@import "src/styles/_colors.scss";
+.primary-emotion-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  &__title,
+  &__description {
+    color: $white;
+    margin: 1rem 0;
+  }
+  &__description {
+    opacity: 0.3;
+  }
+  &__bar {
+    height: 2px;
+    border: 0;
+  }
+}
