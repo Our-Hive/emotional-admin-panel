@@ -1,0 +1,15 @@
+<section class="primary-emotion-section">
+  <div>
+    <header>
+      <h2 class="primary-emotion-section__title">{{ title() }}</h2>
+      <hr
+        class="primary-emotion-section__bar"
+        [style.background-color]="color()"
+      />
+    </header>
+    <p class="primary-emotion-section__description">
+      {{ description() }}
+    </p>
+  </div>
+  <app-button-edit />
+</section>

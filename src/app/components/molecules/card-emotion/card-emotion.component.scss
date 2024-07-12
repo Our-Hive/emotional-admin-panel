@@ -1,0 +1,30 @@
+@import "src/styles/_typography.scss";
+
+.card-emotion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-5px);
+  }
+  &__title {
+    font-size: $font-size-large;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__color {
+    font-size: $font-size-medium-large;
+  }
+}

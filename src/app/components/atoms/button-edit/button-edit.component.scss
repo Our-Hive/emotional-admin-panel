@@ -1,0 +1,8 @@
+@import "src/styles/_colors.scss";
+
+.button-edit {
+  background-color: $edit;
+  border-radius: 50%;
+  padding: 1rem;
+  cursor: pointer;
+}
