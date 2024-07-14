@@ -1,4 +1,4 @@
-export interface GetSecondaryEmotionDto {
+export interface SecondaryEmotionDto {
   name: string;
   description: string;
   color: string;
