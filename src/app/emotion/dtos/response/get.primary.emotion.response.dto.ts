@@ -1,6 +1,6 @@
 import {SecondaryEmotionDto} from "../secondaryEmotionDto";
 
-export interface GetPrimaryEmotionDto {
+export interface GetPrimaryEmotionResponseDto {
   name: string;
   description: string;
   color: string;
