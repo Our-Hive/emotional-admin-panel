@@ -11,10 +11,14 @@ export class ContactLineService {
   apiUrl = `${environment.adminApiBase}/contact-lines`;
   constructor(private http: HttpClient) { }
 
-  getContactLines() {
-    return this.http.get<GetContactLineResponseDto[]>(`${this.apiUrl}`);
+  getContactLine(size: number, startAfter: string) {
+    return this.http.get<GetContactLineResponseDto[]>(this.apiUrl, {
+      params: {
+        size: size.toString(),
+        startAfter: startAfter
+      }
+    });
   }
-
   createContactLine(contactLine: PostContactLineRequestDto) {
     return this.http.post(`${this.apiUrl}`, contactLine);
   }
