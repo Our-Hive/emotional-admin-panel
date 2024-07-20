@@ -27,4 +27,14 @@ export class ImageService {
 
     return this.httpClient.post<GetImageUrlResponseDto>(this.apiUrl, formData);
   }
+
+  getImagesByApprovalStatus(approved: boolean) {
+    return this.httpClient.get<GetImageResponseDto[]>(this.apiUrl,
+      {
+        params: {
+          approved: approved.toString()
+      }}
+    );
+  }
+
 }
