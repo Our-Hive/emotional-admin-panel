@@ -37,4 +37,7 @@ export class ImageService {
     );
   }
 
+  approveImage(imageId: string) {
+    return this.httpClient.put(`${this.apiUrl}/${imageId}`, {});
+  }
 }
