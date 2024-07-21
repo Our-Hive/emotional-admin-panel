@@ -1,0 +1,13 @@
+.information-panel {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+  &__items-container {
+    display: grid;
+    gap: 1rem;
+  }
+}

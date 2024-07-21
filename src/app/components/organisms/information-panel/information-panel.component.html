@@ -1,0 +1,37 @@
+@if (type() == informationType.RecommendedContent) {
+<header class="information-panel__header">
+  <app-title-underlined
+    [title]="content.title"
+    [titleColor]="content.titleColor"
+    [lineColor]="content.lineColor"
+  />
+  <app-button-add [backgroundColor]="content.addColor" />
+</header>
+<div class="information-panel__items-container">
+  @for (content of recommendedData; track content.id) {
+  <app-card-recommended-content
+    [title]="content.title"
+    [description]="content.description"
+    [link]="content.url"
+    [linkText]="content.url"
+  />
+  }
+</div>
+} @else if (type() === informationType.ContactLine) {
+<header class="information-panel__header">
+  <app-title-underlined
+    [title]="contactLines.title"
+    [titleColor]="contactLines.titleColor"
+    [lineColor]="contactLines.lineColor"
+  />
+  <app-button-add [backgroundColor]="contactLines.addColor" />
+</header>
+<div class="information-panel__items-container">
+  @for (contact of contactLinesData; track contact.id) {
+  <app-card-contact-lines
+    [title]="contact.name"
+    [description]="contact.description"
+  />
+  }
+</div>
+}
