@@ -8,4 +8,14 @@ body {
   box-sizing: border-box;
   font-family: $font-family;
   background-color: $background;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $background;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $onBackground;
+    border-radius: 30px;
+  }
 }
