@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -11,7 +11,8 @@ import { ButtonPrimaryComponent } from '@atoms/button-primary/button-primary.com
 import { FormFieldComponent } from '@molecules/form-field/form-field.component';
 import { AuthService } from 'src/app/auth/service/auth.service';
 import { PostAuthRequestDto } from '../../../auth/dtos/request/post.auth.request.dto';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-login-form',
@@ -27,8 +28,16 @@ import {Router} from "@angular/router";
 })
 export class LoginFormComponent {
   loginForm: FormGroup;
+  isBrowser: boolean;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+
     this.loginForm = this.fb.nonNullable.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -55,6 +64,9 @@ export class LoginFormComponent {
       .subscribe({
         next: async (response) => {
           alert('Login successful');
+          if (this.isBrowser) {
+            this.authService.saveToken(response.access_token);
+          }
           await this.router.navigate(['/emotions']);
         },
         error: (error) => {

@@ -1,0 +1,14 @@
+@import "src/styles/_typography.scss";
+@import "src/styles/_colors.scss";
+
+.not-found {
+  &__title {
+    font-size: $font-size-xl;
+    color: $white;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+}

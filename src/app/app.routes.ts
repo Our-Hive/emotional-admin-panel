@@ -4,6 +4,8 @@ import { EmotionsPageComponent } from './components/pages/emotion-page/emotions-
 import { DashboardComponent } from '@templates/dashboard/dashboard.component';
 import { InformationPageComponent } from './components/pages/information-page/information-page.component';
 import { MySpacePageComponent } from '@pages/my-space-page/my-space-page.component';
+import { authGuard } from './auth/guards/auth.guard';
+import { NotFoundPageComponent } from '@pages/not-found-page/not-found-page.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +15,7 @@ export const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: 'emotions',
@@ -27,5 +30,9 @@ export const routes: Routes = [
         component: MySpacePageComponent,
       },
     ],
+  },
+  {
+    path: '**',
+    component: NotFoundPageComponent,
   },
 ];

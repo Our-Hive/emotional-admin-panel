@@ -8,13 +8,30 @@ import { PostAuthRequestDto } from '../dtos/request/post.auth.request.dto';
   providedIn: 'root',
 })
 export class AuthService {
-  apiUrl = `${environment.apiBase}/auth`;
+  private apiUrl = `${environment.apiBase}/auth`;
+  private tokenKey = 'token';
+
   constructor(private http: HttpClient) {}
 
   login(loginCredentials: PostAuthRequestDto) {
     return this.http.post<PostAuthResponseDto>(
       `${this.apiUrl}/login`,
-      loginCredentials
+      loginCredentials,
     );
+  }
+  isAuthenticated() {
+    return this.getToken().length > 0;
+  }
+
+  saveToken(token: string) {
+    localStorage.setItem(this.tokenKey, token);
+  }
+
+  getToken(): string {
+    return localStorage.getItem(this.tokenKey) || '';
+  }
+
+  logout() {
+    localStorage.removeItem(this.tokenKey);
   }
 }
