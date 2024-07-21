@@ -1,6 +1,6 @@
 export interface GetRecommendedContentResponseDto {
-  description: string;
   id: string;
+  description: string;
   title: string;
   url: string;
 }
