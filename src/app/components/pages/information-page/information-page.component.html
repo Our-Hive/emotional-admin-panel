@@ -1,1 +1,12 @@
-<p>information works!</p>
+<div
+  style="
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    place-items: center;
+    padding: 1rem 0;
+  "
+>
+  <app-information-panel [type]="information.RecommendedContent" />
+  <app-information-panel [type]="information.ContactLine" />
+</div>

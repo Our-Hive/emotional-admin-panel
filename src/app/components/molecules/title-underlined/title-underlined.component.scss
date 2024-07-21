@@ -1,0 +1,13 @@
+@import "src/styles/_typography.scss";
+
+.title-underlined {
+  &__title {
+    font-size: $font-size-large;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  &__underline {
+    height: 2px;
+    border: 0;
+  }
+}
